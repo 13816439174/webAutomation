@@ -1,7 +1,7 @@
 # _*_ coding:utf-8 _*_
 # 作者：Olivia
 # @Time: 2021/2/27 下午8:13
-# @File: base_page.py
+# @File: base.py
 '''
 基类，在基类中定义常规的元素操作行为及driver操作行为
 '''
@@ -11,9 +11,10 @@ from selenium import webdriver
 
 class BasePage:
     # driver = webdriver.Chrome()
-    # 构造函数
+
     url = 'https://ctfdev.iotspacex.com/web/en/#/'
 
+    # 构造函数
     def __init__(self,driver):
         self.driver= driver
 
@@ -22,8 +23,8 @@ class BasePage:
         self.driver.get(self.url)
 
     # 退出
-    def quit(self):
-        self.driver.quit()
+    # def quit(self):
+    #     self.driver.quit()
 
     # 定位元素
     def locator(self,loc):
