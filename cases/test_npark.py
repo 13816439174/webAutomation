@@ -1,7 +1,7 @@
 # _*_ coding:utf-8 _*_
 # 作者：Olivia
 # @Time: 2021/2/28 下午5:31
-# @File: test_demo.py
+# @File: test_npark.py
 import unittest
 from selenium import webdriver
 from page_object.login_page import LoginPage
@@ -32,6 +32,8 @@ class TestDemo(unittest.TestCase):
 
     def test_02_dashboardView(self):
         self.dashboard.viewDashboard()
+
+
 
 if __name__ == '__main__':
     unittest.main()
