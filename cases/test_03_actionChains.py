@@ -12,6 +12,8 @@ from selenium.webdriver import ActionChains
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from cases.chrome_options import Options
+from selenium.webdriver.support.wait import WebDriverWait
+
 
 driver = webdriver.Chrome(options=Options().options_conf())
 driver.implicitly_wait(10)
@@ -21,6 +23,9 @@ driver.get('http://www.baidu.com')
 el = driver.find_element_by_xpath('//*[@id="s-usersetting-top"]')
 action = ActionChains(driver)
 action.move_to_element(el).perform()
+# 显示等待，通过显示等待来做assert，等到某个元素出现后，再进行下一个操作
+WebDriverWait(driver,5,0.5).until(lambda el: driver.find_element_by_link_text('地图'),message='百度页面打开失败')
+
 driver.quit()
 
 

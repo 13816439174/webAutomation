@@ -37,3 +37,9 @@ class BasePage:
     # 点击
     def click(self,loc):
         self.locator(loc).click()
+
+    # 文本断言校验
+    def assert_text(self,loc,actual_text):
+        text = self.locator(loc).text
+        assert text == actual_text, '断言失败'
+
