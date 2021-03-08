@@ -42,6 +42,8 @@ class Options:
 
         # 隐身模式，没啥用，就是好玩
         options.add_argument('incognito')
+        # 去掉日志信息打印，用来解决log信息重复打印
+        options.add_argument('log-level=3')
         return options
 
 # if __name__ == '__main__':

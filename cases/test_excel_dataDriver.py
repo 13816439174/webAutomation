@@ -17,7 +17,7 @@ print(sheetNames)
 for name in sheetNames:
     print(name)
 # 操作单元格cell
-rootCreateParkSheet = excel['rootCreatePark']
+rootCreateParkSheet = excel['Sheet1']
 print(rootCreateParkSheet)
 # 获取单元格内容
 print(rootCreateParkSheet.values)
