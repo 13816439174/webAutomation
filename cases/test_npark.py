@@ -7,6 +7,7 @@ from selenium import webdriver
 from page_object.login_page import LoginPage
 from page_object.dashboard_page import DashboardPage
 from ddt import ddt,file_data
+from cases.chrome_options import Options
 
 '''
 如果不希望用例之间产生关联，那就是不同的流程，用不同的测试用例，将需要的页面对象分别实例化
@@ -18,7 +19,7 @@ from ddt import ddt,file_data
 class TestDemo(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.driver = webdriver.Chrome()
+        cls.driver = webdriver.Chrome(options=Options().options_conf())
         cls.lp = LoginPage(cls.driver)
         cls.dashboard = DashboardPage(cls.driver)
 
@@ -29,6 +30,7 @@ class TestDemo(unittest.TestCase):
     @file_data('../data/loginUserData.yaml')
     def test_01_login(self,**kwargs):
         self.lp.login(kwargs['username'],kwargs['password'])
+        # self.assertEqual()
 
     def test_02_dashboardView(self):
         self.dashboard.viewDashboard()

@@ -9,7 +9,7 @@ from selenium import webdriver
 class LoginPage(BasePage):
     # 封装页面url:每一个不同的页面对象，对应的都是不同页面，就会有不同的url
     url = BasePage.url+' login'
-    # 页面关联元素
+    # 页面关联元素，用元组的格式来定位元素，获取元素
     user = (By.XPATH,'/html/body/ph-root/ph-login/div[2]/div/form/ia-form-control[1]/input')
     pwd = (By.XPATH,'/html/body/ph-root/ph-login/div[2]/div/form/ia-form-control[2]/ia-password/input')
     button = (By.XPATH,'/html/body/ph-root/ph-login/div[2]/div/form/ia-button/button/span')
