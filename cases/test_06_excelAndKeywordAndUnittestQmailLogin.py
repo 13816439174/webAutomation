@@ -8,6 +8,7 @@ from base.log import log_option
 import openpyxl
 from base.base_keyword import WebKeys
 from openpyxl.styles import Font,PatternFill
+from base.read_excel import read_excel
 
 class Demo(unittest.TestCase):
 
@@ -19,7 +20,7 @@ class Demo(unittest.TestCase):
 
     # def tearDownClass(cls)->None:
     #     print('this is tearDownclass')
-
+    @unittest.skip('skip')
     def test_01_qqMailLoginFailed(self):
         excel=openpyxl.load_workbook('../data/qqEmailLogin.xlsx')
         LoginFailedSheet = excel['LoginFailed']
@@ -57,6 +58,10 @@ class Demo(unittest.TestCase):
                     self.log.info('现在执行关键字:{0}，操作描述:{1}'.format(value[1], value[5]))
                     getattr(wk, value[1])(**args)
         excel.close()
+
+    def test_02(self):
+        read_excel('../data/qqEmailLogin.xlsx')
+
 
 
 if __name__ == '__main__':
