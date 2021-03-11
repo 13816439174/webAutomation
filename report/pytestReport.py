@@ -9,5 +9,5 @@ if __name__ == '__main__':
     # current_time = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime())
     # pytest.main(['-v','../test_case/test_philipsAdmin.py','--html=../test_report/pytestReport'+current_time+'.html'])
 
-    pytest.main(['-v','../test_case/test_06_excelAndKeywordAndUnittestQmailLogin.py','--alluredir','../temp'])
+    pytest.main(['-v','../cases/test_06_excelAndKeywordAndUnittestQmailLogin.py','--alluredir','../temp'])
     os.system('allure generate ../temp -o ../test_report --clean')
