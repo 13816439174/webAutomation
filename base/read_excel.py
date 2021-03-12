@@ -74,16 +74,3 @@ def read_excel(path):
 # get_excelSheet('../data/qqEmailLogin.xlsx')
 # read_excel('../data/qqEmailLogin.xlsx')
 
-
-
-# path = '../data/qqEmailLogin.xlsx'
-# excel=openpyxl.load_workbook(path)
-# sheetNames=excel.sheetnames
-# name = sheetNames[0]
-# print(name)
-#
-# sheet=excel[name]
-# print(sheet)
-# print(sheet.values)
-# for value in sheet.values:
-#     print(value)
